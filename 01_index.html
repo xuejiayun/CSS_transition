@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>simple transition</title>
+    <style>
+        html,body,input {
+            padding: 0;
+            margin: 0;
+        }
+        .wrapper {
+            margin: 0 auto;
+            width: 600px;
+            text-align: center;
+        }
+        span {
+            font-size: 50px;
+            font-weight: 600;
+            position:relative;
+        }
+        .trans::after {
+            content:"";
+            position:absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            margin: 0 auto;
+            transition:all 0.5s;
+            border-bottom: 3px solid deepskyblue;
+        }
+        input[type="checkbox"] {
+            position:absolute;
+            clip:rect(0,0,0,0);
+        }
+        .center {
+            text-align: center;
+        }
+        label {
+            display: inline-block;
+            margin-top: 30px;
+            border: 1px solid rgba(0,0,0,0.6);
+            border-radius: 5px;
+            line-height: 30px;
+            font-size: 20px;
+            padding: 5px 10px;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.55);
+        }
+        :checked~.trans::after{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input id="btn" type="checkbox">
+        <span class="trans">前端学院</span>
+        <div class="center">
+
+            <label for="btn">切换样式</label>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>
